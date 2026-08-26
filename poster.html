@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第一届星海足球超级联赛 · 宣传海报</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+      background: #e9ece7;
+      color: #2a2a2a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 12px 48px;
+    }
+
+    .toolbar {
+      max-width: 794px;
+      width: 100%;
+      margin-bottom: 14px;
+      font-size: 13px;
+      color: #5f5e5a;
+      text-align: center;
+    }
+
+    .poster {
+      position: relative;
+      width: 794px;
+      height: 1123px;
+      background: linear-gradient(158deg, #1b4332 0%, #2d6a4f 58%, #173a2c 100%);
+      color: #fff;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    }
+
+    /* 球场装饰：中线 + 中圈，低透明度不抢内容 */
+    .deco-line {
+      position: absolute;
+      left: -10%;
+      right: -10%;
+      top: 44%;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.07);
+    }
+    .deco-circle {
+      position: absolute;
+      left: 50%;
+      top: 44%;
+      width: 540px;
+      height: 540px;
+      transform: translate(-50%, -50%);
+      border: 2px solid rgba(255, 255, 255, 0.07);
+      border-radius: 50%;
+    }
+    .deco-glow {
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(105, 190, 140, 0.28), transparent 70%);
+      filter: blur(4px);
+    }
+
+    .poster__inner {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      padding: 60px 56px 52px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .school {
+      font-size: 16px;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, 0.82);
+    }
+    .school .ball { margin-right: 8px; }
+
+    .eyebrow {
+      margin-top: 16px;
+      font-size: 13px;
+      letter-spacing: 4px;
+      color: #b7e4c7;
+      text-transform: uppercase;
+    }
+
+    .title-term {
+      margin-top: 40px;
+      font-size: 22px;
+      letter-spacing: 6px;
+      color: rgba(255, 255, 255, 0.78);
+    }
+    .title-main {
+      margin-top: 12px;
+      font-size: 60px;
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: 2px;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+    }
+    .title-en {
+      margin-top: 16px;
+      font-size: 15px;
+      letter-spacing: 3px;
+      color: #d8f3dc;
+    }
+
+    .divider {
+      width: 120px;
+      height: 3px;
+      margin: 30px 0 26px;
+      background: linear-gradient(90deg, transparent, #95d5b2, transparent);
+      border-radius: 3px;
+    }
+
+    .chips {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .chip {
+      padding: 9px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .host {
+      margin-top: 22px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.72);
+      letter-spacing: 1px;
+    }
+
+    .spacer { flex: 1; }
+
+    .qr-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 22px 26px 18px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.25);
+    }
+    .qr-card img {
+      width: 168px;
+      height: 168px;
+      display: block;
+    }
+    .qr-card .qr-cap {
+      margin-top: 12px;
+      color: #1b4332;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .qr-card .qr-sub {
+      margin-top: 4px;
+      color: #52796f;
+      font-size: 12.5px;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-note {
+      margin-top: 22px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.55);
+      letter-spacing: 1px;
+    }
+
+    @media print {
+      body { background: #fff; padding: 0; }
+      .toolbar { display: none; }
+      .poster {
+        border-radius: 0;
+        box-shadow: none;
+        width: 210mm;
+        height: 297mm;
+      }
+      @page { size: A4; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">提示：按 ⌘/Ctrl + P 可「打印 / 另存为 PDF」，或截图保存为图片分享。</div>
+
+  <div class="poster">
+    <div class="deco-glow"></div>
+    <div class="deco-line"></div>
+    <div class="deco-circle"></div>
+
+    <div class="poster__inner">
+      <div class="school"><span class="ball">⚽</span>星海实验高级中学（苏茜路校区）</div>
+      <div class="eyebrow">Xinghai Suqian Football Club</div>
+
+      <div class="title-term">第 一 届</div>
+      <div class="title-main">星海足球超级联赛</div>
+      <div class="title-en">XINGHAI FOOTBALL SUPER LEAGUE · XFSL</div>
+
+      <div class="divider"></div>
+
+      <div class="chips">
+        <span class="chip">五人制赛制</span>
+        <span class="chip">2026 秋季学期</span>
+        <span class="chip">新操场开赛</span>
+      </div>
+      <div class="host">主办：星海苏茜足球社</div>
+
+      <div class="spacer"></div>
+
+      <div class="qr-card">
+        <img src="website_qr.png" alt="星海足球超级联赛官网二维码" />
+        <div class="qr-cap">扫码访问官网</div>
+        <div class="qr-sub">了解赛程 · 在线报名</div>
+      </div>
+
+      <div class="footer-note">© 2026 星海实验高级中学 · 星海苏茜足球社 · 第一届星海足球超级联赛</div>
+    </div>
+  </div>
+</body>
+</html>

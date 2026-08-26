@@ -292,6 +292,18 @@
       background: rgba(255, 255, 255, 0.2);
     }
 
+    .btn--outline {
+      background: #fff;
+      color: var(--green-dark);
+      border: 1.5px solid var(--green);
+      box-shadow: none;
+    }
+
+    .btn--outline:hover {
+      background: var(--green-subtle);
+      transform: translateY(-2px);
+    }
+
     .hero__scroll {
       position: absolute;
       bottom: 28px;
@@ -784,6 +796,10 @@
 
     .join__cta .btn {
       width: 100%;
+    }
+
+    .join__cta .btn + .btn {
+      margin-top: 10px;
     }
 
     /* Rules */
@@ -1643,6 +1659,7 @@
           <div class="join__cta">
             <p>零报名费，物资由自愿捐赠支持</p>
             <button type="button" class="btn btn--primary" data-qr>扫码加入交流群</button>
+            <a href="xfsl-poster.png" download="xfsl-poster.png" class="btn btn--outline js-share-poster">📤 分享 / 下载海报</a>
           </div>
         </div>
       </div>
@@ -1746,6 +1763,7 @@
           <li><a href="#format">赛制方案</a></li>
           <li><a href="#schedule">赛程时间线</a></li>
           <li><a href="#join">立即报名</a></li>
+          <li><a href="xfsl-poster.png" download="xfsl-poster.png" class="js-share-poster">分享 / 下载海报</a></li>
         </ul>
       </div>
     </div>
@@ -1889,6 +1907,38 @@
     });
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeQr();
+    });
+
+    // 分享 / 下载海报：手机调系统分享菜单，不支持则回退为下载
+    const sharePoster = async (e) => {
+      e.preventDefault();
+      const url = 'xfsl-poster.png';
+      const fileName = 'xfsl-poster.png';
+      const title = '第一届星海足球超级联赛';
+      const text = '扫码了解赛程并在线报名 · 星海苏茜足球社';
+      try {
+        if (navigator.canShare && navigator.share) {
+          const resp = await fetch(url);
+          const blob = await resp.blob();
+          const file = new File([blob], fileName, { type: blob.type || 'image/png' });
+          if (navigator.canShare({ files: [file] })) {
+            await navigator.share({ files: [file], title, text });
+            return;
+          }
+        }
+      } catch (err) {
+        if (err && err.name === 'AbortError') return; // 用户取消分享，不降级
+      }
+      // 回退：直接下载
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    };
+    document.querySelectorAll('.js-share-poster').forEach(el => {
+      el.addEventListener('click', sharePoster);
     });
 
   </script>
