@@ -678,6 +678,57 @@
       align-items: start;
     }
 
+    .join__survey {
+      margin-top: 52px;
+    }
+
+    .join__survey-title {
+      font-size: 1.5rem;
+      color: var(--green);
+      margin: 6px 0 6px;
+    }
+
+    .survey-frame-holder {
+      margin-top: 20px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #fff;
+      border: 1px solid rgba(45, 106, 79, 0.1);
+    }
+
+    .survey-frame-holder iframe {
+      width: 100%;
+      height: 800px;
+      border: 0;
+      display: block;
+    }
+
+    .survey-placeholder {
+      padding: 64px 24px;
+      text-align: center;
+      color: var(--ink-soft);
+    }
+
+    .survey-placeholder p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 10px;
+    }
+
+    .survey-placeholder__sub {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #98a89f;
+      max-width: 420px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 860px) {
+      .survey-frame-holder iframe { height: 700px; }
+    }
+
     .join__card {
       background: var(--bg);
       border-radius: var(--radius);
@@ -1288,7 +1339,7 @@
       </h1>
       <p class="hero__subtitle">五人制 · 2026 秋季学期 · 新操场</p>
       <div class="hero__cta">
-        <button type="button" class="btn btn--primary" data-qr>立即报名</button>
+        <a href="#join" class="btn btn--primary">立即报名</a>
         <a href="#format" class="btn btn--ghost">了解赛制</a>
       </div>
     </div>
@@ -1523,7 +1574,7 @@
       <div class="section__header reveal">
         <span class="section__eyebrow">How to Join</span>
         <h2 class="section__title">如何报名</h2>
-        <p class="section__lead">简单三步，即可加入第一届星海足球超级联赛。</p>
+        <p class="section__lead">在线填写报名表，加入第一届星海足球超级联赛。</p>
       </div>
       <div class="join__wrap reveal">
         <div class="join__card">
@@ -1548,8 +1599,8 @@
         <div class="join__card">
           <h3><span>03</span> 报名方式</h3>
           <ul class="join__list">
-            <li>扫码加入联赛报名群</li>
-            <li>填写队伍名称与队员名单</li>
+            <li>在下方在线报名表填写队伍与队员信息</li>
+            <li>提交后扫码加入联赛交流群</li>
             <li>或联系足球社社长报名</li>
             <li>报名截止后统一抽签分组</li>
           </ul>
@@ -1565,8 +1616,19 @@
           </div>
           <div class="join__cta">
             <p>零报名费，物资由自愿捐赠支持</p>
-            <button type="button" class="btn btn--primary" data-qr>立即报名</button>
+            <button type="button" class="btn btn--primary" data-qr>扫码加入交流群</button>
           </div>
+        </div>
+      </div>
+
+      <div class="join__survey reveal">
+        <div class="section__header">
+          <span class="section__eyebrow">Sign Up</span>
+          <h3 class="join__survey-title">在线报名表</h3>
+          <p class="section__lead">填写下方表单完成报名，提交后扫码进入联赛交流群。</p>
+        </div>
+        <div class="survey-frame-holder">
+          <iframe src="https://www.wjx.top/vm/hmIttui.aspx?width=760&source=iframe&s=t" title="星海足球超级联赛报名表" width="799" height="800" frameborder="0" scrolling="auto"></iframe>
         </div>
       </div>
     </div>
