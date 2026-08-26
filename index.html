@@ -847,16 +847,256 @@
       color: rgba(255, 255, 255, 0.5);
     }
 
-    /* Reveal animation */
+    /* Reveal animation (enhanced) */
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(36px) scale(0.97);
+      filter: blur(6px);
+      transition: opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease;
     }
 
     .reveal.active {
       opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+
+    /* ===== Enhanced animations ===== */
+
+    /* Hero drifting glow */
+    .hero__glow {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(40% 50% at 26% 20%, rgba(96, 196, 146, 0.55), transparent 68%),
+        radial-gradient(36% 46% at 82% 28%, rgba(54, 140, 102, 0.48), transparent 70%);
+      filter: blur(16px);
+      animation: glowDrift 13s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowDrift {
+      0%   { transform: translate3d(0, 0, 0) scale(1.05);      opacity: 0.7; }
+      100% { transform: translate3d(7%, -5%, 0) scale(1.16);   opacity: 1; }
+    }
+
+    /* Hero entrance (staggered) */
+    .hero__badge,
+    .hero__title,
+    .hero__subtitle,
+    .hero__cta {
+      opacity: 0;
+      animation: heroRise 0.95s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+    }
+
+    .hero__title    { animation-delay: 0.32s; }
+    .hero__subtitle { animation-delay: 0.58s; }
+    .hero__cta      { animation-delay: 0.74s; }
+
+    .hero__badge {
+      animation: heroRise 0.95s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s forwards;
+    }
+
+    @keyframes heroRise {
+      from { opacity: 0; transform: translateY(30px); filter: blur(4px); }
+      to   { opacity: 1; transform: translateY(0);    filter: blur(0); }
+    }
+
+    /* Divider shimmer */
+    .hero__title-divider {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero__title-divider::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95), transparent);
+      animation: dividerShimmer 3.2s ease-in-out infinite;
+    }
+
+    @keyframes dividerShimmer {
+      0%        { left: -100%; }
+      55%, 100% { left: 100%; }
+    }
+
+    /* Section eyebrow animated underline */
+    .section__eyebrow {
+      position: relative;
+    }
+
+    .section__eyebrow::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -8px;
+      height: 2px;
+      width: 0;
+      background: var(--green-light);
+      border-radius: 2px;
+      transform: translateX(-50%);
+      transition: width 0.55s ease 0.15s;
+    }
+
+    .section__header.active .section__eyebrow::after {
+      width: 52px;
+    }
+
+    /* Card soft glow on hover — natural rise + gentle light */
+    .highlight,
+    .format-card,
+    .honor,
+    .rule {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                  box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .highlight:hover,
+    .format-card:hover,
+    .honor:hover,
+    .rule:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 52px rgba(45, 106, 79, 0.13),
+                  0 6px 18px rgba(45, 106, 79, 0.07);
+    }
+
+    /* Staggered grid children */
+    .stagger-child {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.active .stagger-child {
+      opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Scroll progress bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background: linear-gradient(90deg, var(--green-light), var(--green));
+      transform: scaleX(0);
+      transform-origin: left;
+      z-index: 1100;
+      transition: transform 0.08s linear;
+    }
+
+    /* Back to top */
+    .to-top {
+      position: fixed;
+      right: 26px;
+      bottom: 26px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: none;
+      background: var(--green);
+      color: #fff;
+      font-size: 1.25rem;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(45, 106, 79, 0.35);
+      z-index: 1100;
+      opacity: 0;
+      transform: translateY(14px);
+      pointer-events: none;
+      transition: opacity 0.35s ease, transform 0.35s ease, background 0.25s ease;
+    }
+    .to-top.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .to-top:hover {
+      background: var(--green-dark);
+    }
+
+    /* Nav scrolled state */
+    .nav.scrolled {
+      background: #fff;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    /* CTA breathing glow */
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 6px 18px rgba(45, 106, 79, 0.20); }
+      50%      { box-shadow: 0 10px 30px rgba(45, 106, 79, 0.45); }
+    }
+    .btn--primary {
+      animation: ctaPulse 3s ease-in-out infinite;
+    }
+    .btn--primary:hover {
+      animation: none;
+    }
+
+    /* Hero parallax */
+    .hero__bg {
+      height: 125%;
+      top: -12%;
+      will-change: transform;
+    }
+
+    /* Timeline dot light-up + line grow */
+    .timeline::before {
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 1.1s ease;
+    }
+    .timeline.active::before {
+      transform: scaleY(1);
+    }
+    .timeline__dot {
+      background: rgba(45, 106, 79, 0.32);
+      box-shadow: 0 0 0 2px rgba(45, 106, 79, 0.12);
+      transition: background 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
+    }
+    .timeline__item.in-view .timeline__dot {
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(45, 106, 79, 0.14), 0 0 16px rgba(45, 106, 79, 0.45);
+      transform: scale(1.18);
+    }
+    .timeline__item--final.in-view .timeline__dot {
+      background: var(--green-dark);
+      box-shadow: 0 0 0 5px rgba(45, 106, 79, 0.18), 0 0 20px rgba(45, 106, 79, 0.55);
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .reveal,
+      .stagger-child {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .hero__glow {
+        animation: none !important;
+      }
+      .hero__badge,
+      .hero__title,
+      .hero__subtitle,
+      .hero__cta {
+        opacity: 1 !important;
+      }
+      .btn--primary { animation: none !important; }
+      .to-top, .scroll-progress { transition: none !important; }
+      .timeline__dot { transition: none !important; }
+      .timeline::before { transition: none !important; }
     }
 
     /* Responsive */
@@ -992,6 +1232,8 @@
 </head>
 <body>
 
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <nav class="nav">
     <div class="nav__inner">
       <a href="#" class="nav__logo">星海足球超级联赛 <span class="nav__logo-en">XFSL</span></a>
@@ -1010,6 +1252,7 @@
   <header class="hero" id="top">
     <div class="hero__bg"></div>
     <div class="hero__overlay"></div>
+    <div class="hero__glow"></div>
     <div class="hero__content">
       <span class="hero__badge">星海苏茜足球社 主办</span>
       <h1 class="hero__title">
@@ -1407,6 +1650,8 @@
     </div>
   </div>
 
+  <button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+
   <script>
     // Mobile nav toggle
     const menuBtn = document.querySelector('.nav__menu');
@@ -1438,6 +1683,14 @@
 
     reveals.forEach(el => observer.observe(el));
 
+    // Stagger children of card grids for a cascading reveal
+    document.querySelectorAll('.highlights__grid, .format__cards, .honors__grid, .rules__grid, .timeline, .goals').forEach(group => {
+      [...group.children].forEach((child, i) => {
+        child.classList.add('stagger-child');
+        child.style.transitionDelay = (i * 90) + 'ms';
+      });
+    });
+
     // Active nav link on scroll
     const sections = document.querySelectorAll('section[id], header[id]');
     const navItems = document.querySelectorAll('.nav__links a');
@@ -1454,6 +1707,50 @@
         link.style.color = link.getAttribute('href') === '#' + current ? 'var(--green)' : '';
       });
     });
+    // Scroll progress, hero parallax, back-to-top, nav scrolled state
+    const heroBg = document.querySelector('.hero__bg');
+    const progress = document.getElementById('scrollProgress');
+    const toTop = document.getElementById('toTop');
+    const navEl = document.querySelector('.nav');
+    let ticking = false;
+
+    function onScroll() {
+      const y = window.scrollY;
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = docH > 0 ? y / docH : 0;
+      if (progress) progress.style.transform = 'scaleX(' + ratio + ')';
+      if (heroBg) heroBg.style.transform = 'translate3d(0,' + (y * 0.35) + 'px,0)';
+      if (toTop) toTop.classList.toggle('show', y > 420);
+      if (navEl) navEl.classList.toggle('scrolled', y > 60);
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    });
+    onScroll();
+
+    if (toTop) {
+      toTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // Timeline dots light up on scroll
+    const tlItems = document.querySelectorAll('.timeline__item');
+    const tlObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          tlObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    tlItems.forEach(item => tlObserver.observe(item));
+
     // QR modal
     const qrModal = document.getElementById('qrModal');
     const openQr = () => {
