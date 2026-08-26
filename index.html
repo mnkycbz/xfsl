@@ -1022,8 +1022,9 @@
       background: var(--green-dark);
     }
 
-    /* Nav scrolled state */
-    .nav.scrolled {
+    /* Nav scrolled state / menu open — same solid white for visual continuity */
+    .nav.scrolled,
+    .nav.menu-open {
       background: #fff;
       box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
     }
@@ -1106,15 +1107,23 @@
         top: 64px;
         left: 0;
         right: 0;
-        background: rgba(255, 255, 255, 0.98);
+        background: #fff;
         flex-direction: column;
-        padding: 20px 24px;
-        gap: 16px;
+        padding: 14px 24px 20px;
+        gap: 4px;
         border-bottom: 1px solid rgba(45, 106, 79, 0.08);
-        transform: translateY(-150%);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        transform: translateY(-10px);
         opacity: 0;
         pointer-events: none;
-        transition: var(--transition);
+        transition: transform 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+                    opacity 0.26s ease;
+      }
+
+      .nav__links a {
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
       }
 
       .nav__links.open {
@@ -1122,6 +1131,19 @@
         opacity: 1;
         pointer-events: all;
       }
+
+      .nav__links.open a {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .nav__links.open li:nth-child(1) a { transition-delay: 0.05s; }
+      .nav__links.open li:nth-child(2) a { transition-delay: 0.09s; }
+      .nav__links.open li:nth-child(3) a { transition-delay: 0.13s; }
+      .nav__links.open li:nth-child(4) a { transition-delay: 0.17s; }
+      .nav__links.open li:nth-child(5) a { transition-delay: 0.21s; }
+      .nav__links.open li:nth-child(6) a { transition-delay: 0.25s; }
+      .nav__links.open li:nth-child(7) a { transition-delay: 0.29s; }
 
       .nav__menu {
         display: block;
@@ -1658,14 +1680,16 @@
     const navLinks = document.querySelector('.nav__links');
 
     menuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      menuBtn.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+      const open = navLinks.classList.toggle('open');
+      document.querySelector('.nav').classList.toggle('menu-open', open);
+      menuBtn.textContent = open ? '✕' : '☰';
     });
 
     // Close mobile menu on link click
     document.querySelectorAll('.nav__links a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
+        document.querySelector('.nav').classList.remove('menu-open');
         menuBtn.textContent = '☰';
       });
     });
