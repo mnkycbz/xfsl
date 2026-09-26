@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星超官网 · 设计改造预览</title>
+<style>
+  :root{
+    --green:#2d6a4f; --green-dark:#1b4332; --green-light:#40916c;
+    --bg:#f3f6f4; --card:#fff; --text:#24332c; --muted:#6b7a73; --line:#dbe4df;
+    --ease-out:cubic-bezier(0.23,1,0.32,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);padding:36px 20px 100px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto}
+  header.top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  h1{font-size:1.45rem;letter-spacing:.2px}
+  p.sub{color:var(--muted);font-size:.92rem;margin:8px 0 26px;line-height:1.6}
+
+  .toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:#fff;box-shadow:0 2px 10px rgba(27,67,50,.06)}
+  .toggle button{border:none;background:transparent;padding:9px 20px;font-size:.86rem;cursor:pointer;color:var(--muted);transition:background .2s ease,color .2s ease}
+  .toggle button.on{background:var(--green);color:#fff}
+
+  .demo{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px}
+  .demo__head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+  .demo__head h3{font-size:1rem}
+  .demo__head code{font-size:.74rem;color:var(--muted);background:#f2f5f3;border:1px solid var(--line);padding:3px 8px;border-radius:6px;white-space:nowrap}
+  .demo__body{display:flex;align-items:center;justify-content:center;gap:18px;padding:26px 10px;background:linear-gradient(180deg,#eef3f0,#e7eeea);border-radius:12px;min-height:120px;flex-wrap:wrap}
+  .demo__note{color:var(--muted);font-size:.84rem;margin-top:12px;line-height:1.6}
+  .demo__note b{color:var(--green-dark)}
+
+  /* ---------- 1. button ---------- */
+  .btn-demo{border:none;border-radius:12px;background:var(--green);color:#fff;font-size:.95rem;padding:13px 30px;cursor:pointer;box-shadow:0 6px 18px rgba(45,106,79,.30)}
+  .btn-demo:active{transform:scale(0.97)}
+
+  /* ---------- 2. card ---------- */
+  .card-demo{width:210px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 18px;text-align:center;box-shadow:0 4px 14px rgba(27,67,50,.05)}
+  .card-demo .icon{font-size:1.9rem;display:block;margin-bottom:10px}
+  .card-demo h4{font-size:.95rem;margin-bottom:6px}
+  .card-demo p{font-size:.8rem;color:var(--muted);line-height:1.5}
+
+  /* ---------- 3. reveal ---------- */
+  .reveal-stage{position:relative;width:100%;display:flex;justify-content:center;align-items:center;min-height:110px}
+  .reveal-box{background:var(--green-dark);color:#fff;border-radius:14px;padding:26px 40px;font-size:1rem;letter-spacing:.5px}
+  .replay-btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 20px;font-size:.85rem;color:var(--green-dark);cursor:pointer}
+
+  /* ---------- 4. modal ---------- */
+  .modal-demo{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;visibility:hidden;opacity:0;z-index:50}
+  .modal-demo.open{visibility:visible;opacity:1}
+  .modal-demo .overlay{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(3px)}
+  .modal-demo .dialog{position:relative;background:#fff;border-radius:18px;padding:30px 34px;max-width:300px;width:100%;text-align:center;box-shadow:0 24px 70px rgba(0,0,0,.32)}
+  .modal-demo .dialog h4{margin-bottom:8px;font-size:1.02rem}
+  .modal-demo .dialog p{font-size:.85rem;color:var(--muted);margin-bottom:18px;line-height:1.6}
+  .modal-demo .dialog button{border:none;border-radius:10px;background:var(--green);color:#fff;padding:10px 22px;font-size:.88rem;cursor:pointer}
+
+  /* ---------- 5. nav underline ---------- */
+  .nav-demo{display:flex;gap:26px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 22px}
+  .nav-demo a{position:relative;color:var(--text);text-decoration:none;font-size:.92rem;padding:4px 0}
+  .nav-demo a::after{content:"";position:absolute;left:0;bottom:0;height:2px;background:var(--green);border-radius:2px}
+  .nav-demo a:hover::after{width:100%}
+
+  /* ============ MODE: CURRENT (default) ============ */
+  /* 1. button: no press feedback, .25s ease on everything */
+  .btn-demo{transition:background .25s ease,transform .25s ease}
+  /* 2. card: slow lift + heavy shadow via box-shadow transition */
+  .card-demo{transition:transform .5s ease,box-shadow .6s ease}
+  .card-demo:hover{transform:translateY(-4px);box-shadow:0 20px 52px rgba(45,106,79,.13),0 6px 18px rgba(45,106,79,.07)}
+  /* 3. reveal: 0.7s ease + blur(6px) + 36px */
+  .reveal-box{opacity:0;transform:translateY(36px);filter:blur(6px)}
+  .reveal-box.go{opacity:1;transform:translateY(0);filter:blur(0);transition:opacity .7s ease,transform .7s ease,filter .7s ease}
+  /* 4. modal: 0.25s ease, dialog translateY(12px) scale(.96) */
+  .modal-demo{transition:opacity .25s ease,visibility .25s ease}
+  .modal-demo .dialog{transform:translateY(12px) scale(.96);transition:transform .25s ease}
+  .modal-demo.open .dialog{transform:translateY(0) scale(1)}
+  /* 5. nav underline: animates width (layout) */
+  .nav-demo a::after{width:0;transition:width .3s ease}
+
+  /* ============ MODE: PROPOSED ============ */
+  body.mode-proposed{
+    /* 1. button: fast ease-out press feedback only on transform */
+    .btn-demo{transition:transform 160ms var(--ease-out)}
+    .btn-demo:hover{transform:translateY(-1px)}
+    .btn-demo:active{transform:scale(.97)}
+  }
+  body.mode-proposed .card-demo{
+    transition:transform .28s var(--ease-out),box-shadow .28s var(--ease-out);
+  }
+  body.mode-proposed .card-demo:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(45,106,79,.10),0 3px 10px rgba(45,106,79,.05);
+  }
+  body.mode-proposed .card-demo:active{transform:translateY(-1px) scale(.98)}
+  body.mode-proposed .reveal-box{
+    opacity:0;transform:translateY(20px);filter:none;
+  }
+  body.mode-proposed .reveal-box.go{
+    opacity:1;transform:translateY(0);
+    transition:opacity .5s var(--ease-out),transform .5s var(--ease-out);
+  }
+  body.mode-proposed .modal-demo{transition:opacity .22s ease,visibility .22s ease}
+  body.mode-proposed .modal-demo .dialog{
+    transform:scale(.94);transition:transform .22s var(--ease-out);
+  }
+  body.mode-proposed .modal-demo.open .dialog{transform:scale(1)}
+  body.mode-proposed .nav-demo a::after{
+    width:100%;transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease-out);
+  }
+  body.mode-proposed .nav-demo a:hover::after{transform:scaleX(1)}
+
+  @media (hover:hover) and (pointer:fine){
+    body.mode-proposed .card-demo:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(45,106,79,.10),0 3px 10px rgba(45,106,79,.05)}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>⚽ 星超官网 · 动效与交互改造预览</h1>
+      <p class="sub">同一个元素，两套动效参数——点右上角切换，直接上手感受「当前版 vs 改造版」的差别。</p>
+    </div>
+    <div class="toggle" role="tablist">
+      <button id="btnCurrent" class="on" type="button">当前版</button>
+      <button id="btnProposed" type="button">改造版</button>
+    </div>
+  </header>
+
+  <!-- 1 button -->
+  <section class="demo">
+    <div class="demo__head"><h3>1 · 按钮按压反馈</h3><code>transition / :active</code></div>
+    <div class="demo__body">
+      <button class="btn-demo" type="button">立即报名</button>
+      <span style="font-size:.8rem;color:var(--muted)">按住鼠标不放试试</span>
+    </div>
+    <p class="demo__note">
+      <b>当前：</b>悬停/按压无任何形状反馈（只有 0.25s 的 ease 过渡）。<br>
+      <b>改造：</b>按压瞬间 <code>scale(0.97)</code>、160ms ease-out——按钮像真的被按下去，反馈即时。
+    </p>
+  </section>
+
+  <!-- 2 card -->
+  <section class="demo">
+    <div class="demo__head"><h3>2 · 卡片悬停</h3><code>transform 0.5s ease / box-shadow 0.6s ease</code></div>
+    <div class="demo__body">
+      <div class="card-demo"><span class="icon">🏆</span><h4>6 支队伍</h4><p>规模适中，竞争与参与兼得</p></div>
+    </div>
+    <p class="demo__note">
+      <b>当前：</b>0.5s+0.6s 双过渡偏慢，hover 像"漂"过去；box-shadow 动画每帧都在重绘。<br>
+      <b>改造：</b>0.28s ease-out 果断上浮、阴影更轻，还给卡片加了按压反馈——快、轻、跟手。
+    </p>
+  </section>
+
+  <!-- 3 reveal -->
+  <section class="demo">
+    <div class="demo__head"><h3>3 · 入场揭示（滚动 reveal）</h3><code>0.7s ease + blur(6px)</code></div>
+    <div class="demo__body">
+      <div class="reveal-stage">
+        <div class="reveal-box" id="revealBox">第一届星海足球超级联赛</div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:10px">
+      <button class="replay-btn" id="replayBtn" type="button">▶ 重播入场动画</button>
+    </p>
+    <p class="demo__note">
+      <b>当前：</b>0.7s ease + 36px 位移 + blur(6px)——慢、拖沓，blur 是昂贵的滤镜渲染。<br>
+      <b>改造：</b>0.5s ease-out + 20px 位移、去 blur——更快、更利落，GPU 友好（只动 transform/opacity）。
+    </p>
+  </section>
+
+  <!-- 4 modal -->
+  <section class="demo">
+    <div class="demo__head"><h3>4 · 二维码弹窗</h3><code>0.25s ease / translateY(12px) scale(.96)</code></div>
+    <div class="demo__body">
+      <button class="btn-demo" id="openModalBtn" type="button">打开弹窗</button>
+    </div>
+    <p class="demo__note">
+      <b>当前：</b>dialog 从 translateY(12px) scale(.96) 入场，0.25s 内置 ease。<br>
+      <b>改造：</b>scale(0.94)→1、0.22s ease-out——弹层以"生长"感出现（modal 保持中心原点），更快更自然。
+    </p>
+  </section>
+
+  <!-- 5 nav underline -->
+  <section class="demo">
+    <div class="demo__head"><h3>5 · 导航下划线</h3><code>width 0→100%（layout）</code></div>
+    <div class="demo__body">
+      <nav class="nav-demo">
+        <a href="#">联赛简介</a>
+        <a href="#">赛制</a>
+        <a href="#">赛程</a>
+        <a href="#">报名</a>
+      </nav>
+    </div>
+    <p class="demo__note">
+      <b>当前：</b>用 <code>width</code> 动画（触发 layout 重排，掉帧风险）。<br>
+      <b>改造：</b>改 <code>transform: scaleX</code> + transform-origin:left——纯 GPU 合成，且是从左向右"长出"。
+    </p>
+  </section>
+
+  <p class="sub" style="margin-top:26px">
+    说明：这是<b>预览页</b>，不影响正式网站。你看完如果觉得改造版手感对了，我再把同样的改动落到 <code>website/index.html</code>（缓动曲线、时长、按压反馈、去 blur、hover 触屏区分等）。竖版/横版海报不涉及动效，无需改动。
+  </p>
+</div>
+
+<!-- modal -->
+<div class="modal-demo" id="demoModal">
+  <div class="overlay" data-close></div>
+  <div class="dialog">
+    <h4>扫码加入交流群</h4>
+    <p>（演示弹窗 · 正式站内为二维码）</p>
+    <button type="button" data-close>知道了</button>
+  </div>
+</div>
+
+<script>
+  var current = document.getElementById('btnCurrent');
+  var proposed = document.getElementById('btnProposed');
+  function setMode(m){
+    document.body.classList.toggle('mode-proposed', m === 'proposed');
+    current.classList.toggle('on', m !== 'proposed');
+    proposed.classList.toggle('on', m === 'proposed');
+  }
+  current.addEventListener('click', function(){ setMode('current'); });
+  proposed.addEventListener('click', function(){ setMode('proposed'); });
+
+  // reveal replay
+  var box = document.getElementById('revealBox');
+  var replay = document.getElementById('replayBtn');
+  function replayAnim(){
+    box.classList.remove('go');
+    void box.offsetWidth;
+    box.classList.add('go');
+  }
+  replay.addEventListener('click', replayAnim);
+  setTimeout(replayAnim, 400);
+
+  // modal
+  var modal = document.getElementById('demoModal');
+  document.getElementById('openModalBtn').addEventListener('click', function(){ modal.classList.add('open'); });
+  modal.querySelectorAll('[data-close]').forEach(function(el){
+    el.addEventListener('click', function(){ modal.classList.remove('open'); });
+  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') modal.classList.remove('open'); });
+</script>
+</body>
+</html>

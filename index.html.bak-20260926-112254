@@ -205,6 +205,18 @@
   .footer__list a:hover{color:#fff}
   .footer__bottom{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);text-align:center;font-size:.8rem;color:#7fa694}
 
+  /* 弹窗 */
+  .modal{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;padding:24px;visibility:hidden;opacity:0;transition:opacity .25s ease,visibility .25s ease}
+  .modal.open{visibility:visible;opacity:1}
+  .modal__overlay{position:absolute;inset:0;background:rgba(20,40,30,.55);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+  .modal__dialog{position:relative;background:linear-gradient(160deg,rgba(255,255,255,.9),rgba(255,255,255,.7));border-radius:24px;padding:34px;max-width:330px;width:100%;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.28);transform:translateY(14px) scale(.95);filter:blur(3px);transition:transform .28s var(--ease-out),filter .28s var(--ease-out)}
+  .modal.open .modal__dialog{transform:translateY(0) scale(1);filter:blur(0)}
+  .modal__close{position:absolute;top:14px;right:14px;width:32px;height:32px;border:none;border-radius:50%;background:rgba(45,106,79,.08);color:var(--text-secondary);font-size:1rem;cursor:pointer;transition:background .2s,transform .15s var(--ease-press)}
+  .modal__close:hover{background:var(--green-mist)}
+  .modal__close:active{transform:scale(.9)}
+  .modal__media img{width:100%;border-radius:16px}
+  .modal__caption{margin-top:16px;font-size:.9rem;color:var(--text-secondary);font-weight:600}
+
   /* 回到顶部（玻璃） */
   .to-top{position:fixed;right:24px;bottom:24px;width:48px;height:48px;border-radius:50%;border:none;color:var(--green-dark);font-size:1.2rem;cursor:pointer;z-index:1100;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,rgba(255,255,255,.75),rgba(255,255,255,.45));-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);border:1px solid rgba(255,255,255,.7);box-shadow:var(--shadow-soft);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .3s ease,transform .3s var(--ease-out)}
   .to-top.show{opacity:1;transform:translateY(0);pointer-events:auto}
@@ -294,7 +306,7 @@
     .hero__badge,.hero h1,.hero__subtitle,.hero__cta{opacity:1!important}
     .to-top,.scroll-progress,.nav,.nav__inner,.nav__logo,.nav__logo .mark,
     .goal,.highlight,.highlight__icon,.format-card,.honor,.honor__icon,.join__card,
-    .rule,.btn,.nav__links,.timeline::before,.timeline__dot{transition:none!important}
+    .rule,.btn,.modal__dialog,.modal__close,.nav__links,.timeline::before,.timeline__dot{transition:none!important}
     .cursor-ring{display:none!important}
   }
   @media (prefers-contrast:more){
@@ -443,10 +455,10 @@
       <p class="section__lead">从招新到决赛颁奖，我们希望整个赛季能够贯穿 2026 秋季学期。</p>
     </div>
     <div class="timeline reveal">
-      <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">即日</p><h3 class="timeline__title">报名开启</h3><p class="timeline__desc">足球社招新进行中，联赛报名通道同步开启。现场登记，或联系社长提交队伍信息。</p></div>
-      <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">开赛前</p><h3 class="timeline__title">报名截止 · 抽签分组</h3><p class="timeline__desc">公布参赛队伍名单，举行抽签仪式确定对阵，全体参赛社员投票确定最终赛制。</p></div>
-      <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">十一月初</p><h3 class="timeline__title">联赛正式开赛</h3><p class="timeline__desc">利用每周社团时间（两块场地并行）进行比赛，建立数据表更新积分榜与射手榜。</p></div>
-      <div class="timeline__item timeline__item--final"><span class="timeline__dot"></span><p class="timeline__date">一月初（暂定）</p><h3 class="timeline__title">决赛日 · 颁奖收官</h3><p class="timeline__desc">决赛日集中进行，邀请同学围观。赛后举行颁奖仪式、冠军队合影，首届联赛圆满收官。</p></div>
+      <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">九月下旬</p><h3 class="timeline__title">社团组建 · 报名开启</h3><p class="timeline__desc">足球社招新完成后，同步开启联赛报名通道。扫码加入报名群或联系社长提交队伍信息。</p></div>
+      <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">十月上旬</p><h3 class="timeline__title">报名截止 · 抽签分组</h3><p class="timeline__desc">公布参赛队伍名单，举行抽签仪式确定对阵，全体参赛社员投票确定最终赛制。</p></div>
+      <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">十月中旬</p><h3 class="timeline__title">联赛正式开赛</h3><p class="timeline__desc">利用每周三次阳光体育课后时间进行比赛，建立数据表更新积分榜与射手榜。</p></div>
+      <div class="timeline__item timeline__item--final"><span class="timeline__dot"></span><p class="timeline__date">十一月中下旬（暂定）</p><h3 class="timeline__title">决赛日 · 颁奖收官</h3><p class="timeline__desc">决赛日集中进行，邀请同学围观。赛后举行颁奖仪式、冠军队合影，首届联赛圆满收官。</p></div>
     </div>
   </div>
 </section>
@@ -476,13 +488,14 @@
       <p class="section__lead">现场登记报名，加入第一届星海足球超级联赛。</p>
     </div>
     <div class="join__wrap reveal">
-      <div class="join__card glass"><h3><span>01</span> 参赛对象</h3><ul class="join__list"><li>高一、高二在校学生</li><li>预计参赛人数约 40 人</li><li>需具备基本足球基础</li><li>场地紧张时报名可能进行小筛选</li><li>身体健康，无不适宜剧烈运动的疾病</li></ul></div>
+      <div class="join__card glass"><h3><span>01</span> 参赛对象</h3><ul class="join__list"><li>高一、高二在校学生</li><li>预计参赛人数约 40 人</li><li>需具备基本足球基础</li><li>身体健康，无不适宜剧烈运动的疾病</li></ul></div>
       <div class="join__card glass"><h3><span>02</span> 组队方式</h3><ul class="join__list"><li>自由组队，跨班级不限</li><li>每队 8 至 10 人（含替补）</li><li>上场 7 人（七人制）</li><li>预计组成 6 支球队</li><li>设队长一名，负责队内联络</li></ul></div>
-      <div class="join__card glass"><h3><span>03</span> 报名方式</h3><ul class="join__list"><li>招新宣讲会现场登记，或联系足球社社长报名</li><li>名额按报名先后确定，尽早锁定队伍</li><li>报名截止后统一抽签分组</li></ul></div>
+      <div class="join__card glass"><h3><span>03</span> 报名方式</h3><ul class="join__list"><li>招新宣讲会现场登记，或联系足球社社长报名</li><li>扫码加入联赛交流群获取动态</li><li>报名截止后统一抽签分组</li></ul></div>
       <div class="join__card glass" style="display:flex;flex-direction:column;justify-content:space-between">
-        <div><h3><span>04</span> 报名时间</h3><ul class="join__list"><li>即日起报名开启</li><li>开赛前报名截止并抽签分组</li><li>十一月初联赛开赛（暂定）</li></ul></div>
+        <div><h3><span>04</span> 报名时间</h3><ul class="join__list"><li>九月底社团组建期开启报名</li><li>十月上旬报名截止并抽签</li><li>十月中旬正式开赛（暂定）</li></ul></div>
         <div class="join__cta">
           <p>零报名费，物资由自愿捐赠支持</p>
+          <button type="button" class="btn btn--primary" data-qr>扫码加入交流群</button>
           <a href="xfsl-poster.png" download="xfsl-poster.png" class="btn btn--outline js-share-poster"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg> 分享 / 下载海报</a>
         </div>
       </div>
@@ -539,6 +552,15 @@
   </div>
 </footer>
 
+<div class="modal" id="qrModal" aria-hidden="true">
+  <div class="modal__overlay" data-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-label="报名群二维码">
+    <button class="modal__close" type="button" data-close aria-label="关闭">✕</button>
+    <div class="modal__media"><img src="wechat_qr.png" alt="星海苏茜足球社联赛报名群二维码" /></div>
+    <p class="modal__caption">长按或扫码加入 · 星海苏茜足球社联赛报名群</p>
+  </div>
+</div>
+
 <button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
 
 <script>
@@ -564,6 +586,12 @@ const tlItems=document.querySelectorAll('.timeline__item');
 const tlObs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');tlObs.unobserve(e.target);}});},{threshold:.3});
 tlItems.forEach(i=>tlObs.observe(i));
 
+const qrModal=document.getElementById('qrModal');
+const openQr=()=>{qrModal.classList.add('open');qrModal.setAttribute('aria-hidden','false');};
+const closeQr=()=>{qrModal.classList.remove('open');qrModal.setAttribute('aria-hidden','true');};
+document.querySelectorAll('[data-qr]').forEach(b=>b.addEventListener('click',(e)=>{e.preventDefault();openQr();}));
+qrModal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeQr));
+document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeQr();});
 
 const sharePoster=async(e)=>{
   e.preventDefault();
