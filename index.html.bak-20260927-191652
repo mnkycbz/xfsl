@@ -321,7 +321,7 @@
       <li><a href="#join">报名</a></li>
       <li><a href="#rules">规则</a></li>
     </ul>
-    <a href="#join" class="nav__cta">如何报名</a>
+    <a href="#join" class="nav__cta">立即报名</a>
   </div>
 </nav>
 
@@ -339,7 +339,7 @@
     </h1>
     <p class="hero__subtitle"><b>七人制</b> · <b>2026 秋季学期</b> · <b>新操场</b></p>
     <div class="hero__cta">
-      <a href="#join" class="btn btn--primary">如何报名 <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      <a href="#join" class="btn btn--primary">立即报名 <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       <a href="#format" class="btn btn--glass">了解赛制 <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     </div>
     <div class="hero__scroll">向下滚动 ↓</div>
@@ -443,8 +443,8 @@
       <p class="section__lead">从招新到决赛颁奖，我们希望整个赛季能够贯穿 2026 秋季学期。</p>
     </div>
     <div class="timeline reveal">
-      <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">9 月 30 日 · 仅此一天</p><h3 class="timeline__title">现场报名</h3><p class="timeline__desc">联赛报名仅限 9 月 30 日（周三）16:00–17:00 现场登记，地点苏茜路校区足球场，逾期不再受理。</p></div>
-      <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">报名结束后</p><h3 class="timeline__title">抽签分组 · 确定赛制</h3><p class="timeline__desc">公布参赛队伍名单，举行抽签仪式确定对阵，全体参赛社员投票确定最终赛制。</p></div>
+      <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">即日</p><h3 class="timeline__title">报名开启</h3><p class="timeline__desc">足球社招新进行中，联赛报名通道同步开启。现场登记，或联系社长提交队伍信息。</p></div>
+      <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">开赛前</p><h3 class="timeline__title">报名截止 · 抽签分组</h3><p class="timeline__desc">公布参赛队伍名单，举行抽签仪式确定对阵，全体参赛社员投票确定最终赛制。</p></div>
       <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">十一月初</p><h3 class="timeline__title">联赛正式开赛</h3><p class="timeline__desc">利用每周社团时间（两块场地并行）进行比赛，建立数据表更新积分榜与射手榜。</p></div>
       <div class="timeline__item timeline__item--final"><span class="timeline__dot"></span><p class="timeline__date">一月初（暂定）</p><h3 class="timeline__title">决赛日 · 颁奖收官</h3><p class="timeline__desc">决赛日集中进行，邀请同学围观。赛后举行颁奖仪式、冠军队合影，首届联赛圆满收官。</p></div>
     </div>
@@ -473,17 +473,17 @@
     <div class="section__header reveal">
       <span class="section__eyebrow">How to Join</span>
       <h2 class="section__title">如何报名</h2>
-      <p class="section__lead">报名仅限 9 月 30 日（周三）16:00–17:00 当天现场登记，地点苏茜路校区足球场。</p>
+      <p class="section__lead">现场登记报名，加入第一届星海足球超级联赛。</p>
     </div>
     <div class="join__wrap reveal">
       <div class="join__card glass"><h3><span>01</span> 参赛对象</h3><ul class="join__list"><li>高一、高二在校学生</li><li>预计参赛人数约 40 人</li><li>需具备基本足球基础</li><li>场地紧张时报名可能进行小筛选</li><li>身体健康，无不适宜剧烈运动的疾病</li></ul></div>
       <div class="join__card glass"><h3><span>02</span> 组队方式</h3><ul class="join__list"><li>自由组队，跨班级不限</li><li>每队 8 至 10 人（含替补）</li><li>上场 7 人（七人制）</li><li>预计组成 6 支球队</li><li>设队长一名，负责队内联络</li></ul></div>
-      <div class="join__card glass"><h3><span>03</span> 报名方式</h3><ul class="join__list"><li>9 月 30 日（周三）16:00–17:00 现场登记报名</li><li>报名仅限当天现场，逾期不再受理</li><li>名额按报名先后确定，尽早锁定队伍</li><li>报名结束后统一抽签分组</li></ul></div>
+      <div class="join__card glass"><h3><span>03</span> 报名方式</h3><ul class="join__list"><li>招新宣讲会现场登记，或联系足球社社长报名</li><li>名额按报名先后确定，尽早锁定队伍</li><li>报名截止后统一抽签分组</li></ul></div>
       <div class="join__card glass" style="display:flex;flex-direction:column;justify-content:space-between">
-        <div><h3><span>04</span> 报名时间</h3><ul class="join__list"><li>仅 9 月 30 日（周三）16:00–17:00 当天报名</li><li>十一月初联赛开赛（暂定）</li><li>一月初决赛（暂定）</li></ul></div>
+        <div><h3><span>04</span> 报名时间</h3><ul class="join__list"><li>即日起报名开启</li><li>开赛前报名截止并抽签分组</li><li>十一月初联赛开赛（暂定）</li></ul></div>
         <div class="join__cta">
           <p>零报名费，物资由自愿捐赠支持</p>
-          <a href="xfsl-recruit-2026.jpg" download="星海苏茜足球社-2026招新.jpg" class="btn btn--outline js-share-poster"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg> 分享 / 下载海报</a>
+          <a href="xfsl-poster.png" download="xfsl-poster.png" class="btn btn--outline js-share-poster"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg> 分享 / 下载海报</a>
         </div>
       </div>
     </div>
@@ -530,8 +530,8 @@
           <li><a href="#about">联赛简介</a></li>
           <li><a href="#format">赛制方案</a></li>
           <li><a href="#schedule">赛程时间线</a></li>
-          <li><a href="#join">如何报名</a></li>
-          <li><a href="xfsl-recruit-2026.jpg" download="星海苏茜足球社-2026招新.jpg" class="js-share-poster">分享 / 下载海报</a></li>
+          <li><a href="#join">立即报名</a></li>
+          <li><a href="xfsl-poster.png" download="xfsl-poster.png" class="js-share-poster">分享 / 下载海报</a></li>
         </ul>
       </div>
     </div>
@@ -567,7 +567,7 @@ tlItems.forEach(i=>tlObs.observe(i));
 
 const sharePoster=async(e)=>{
   e.preventDefault();
-  const url='xfsl-recruit-2026.jpg',fileName='星海苏茜足球社-2026招新.jpg',title='第一届星海足球超级联赛',text='报名仅限 9 月 30 日当天现场 · 星海苏茜足球社';
+  const url='xfsl-poster.png',fileName='xfsl-poster.png',title='第一届星海足球超级联赛',text='扫码了解赛程与报名方式 · 星海苏茜足球社';
   try{
     if(navigator.canShare&&navigator.share){
       const resp=await fetch(url);const blob=await resp.blob();const file=new File([blob],fileName,{type:blob.type||'image/png'});
