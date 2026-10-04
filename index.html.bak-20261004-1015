@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>星海实验高级中学 · 第一届星海足球超级联赛</title>
-<meta name="description" content="星海实验高级中学第一届星海足球超级联赛官方网站。星海苏茜足球社主办，七人制、5 支队伍、双循环 20 场 + 决赛，2026 秋季学期。" />
+<meta name="description" content="星海实验高级中学第一届星海足球超级联赛官方网站。苏茜足球社主办，七人制赛制，2026 秋季学期开赛。" />
 <meta property="og:title" content="星海实验高级中学 · 第一届星海足球超级联赛" />
-<meta property="og:description" content="星海实验高级中学第一届星海足球超级联赛官方网站。星海苏茜足球社主办，七人制、5 支队伍、双循环 20 场 + 决赛，2026 秋季学期。" />
+<meta property="og:description" content="星海实验高级中学第一届星海足球超级联赛官方网站。苏茜足球社主办，七人制赛制，2026 秋季学期开赛。" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://xfsl-league.pages.dev/cover_field.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -315,10 +315,10 @@
     <button class="nav__menu" aria-label="打开菜单">☰</button>
     <ul class="nav__links">
       <li><a href="#about">联赛简介</a></li>
-      <li><a href="#format">竞赛办法</a></li>
+      <li><a href="#format">赛制</a></li>
       <li><a href="#schedule">赛程</a></li>
       <li><a href="#honors">荣誉</a></li>
-      <li><a href="#join">参赛</a></li>
+      <li><a href="#join">报名</a></li>
       <li><a href="#rules">规则</a></li>
     </ul>
     <a href="#join" class="nav__cta">如何报名</a>
@@ -337,7 +337,7 @@
       <span class="hero__title-name">星海足球超级联赛</span>
       <span class="hero__title-en">Xinghai Football Super League</span>
     </h1>
-    <p class="hero__subtitle"><b>七人制</b> · <b>5 支队伍</b> · <b>双循环 20 场</b> · <b>2026 秋季学期</b></p>
+    <p class="hero__subtitle"><b>七人制</b> · <b>2026 秋季学期</b> · <b>新操场</b></p>
     <div class="hero__cta">
       <a href="#join" class="btn btn--primary">如何报名 <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       <a href="#format" class="btn btn--glass">了解赛制 <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
@@ -355,8 +355,8 @@
     </div>
     <div class="about__grid reveal">
       <div class="about__text">
-        <p>同学们对足球的热情日益高涨，但课余时间缺乏有组织、有规模的比赛平台。为此，星海苏茜足球社发起第一届星海足球超级联赛，希望让更多同学能踢上球、享受足球的快乐。</p>
-        <p>本届赛事面向高一、高二在校学生，共 <b>47 名社员、5 支队伍</b>；采用七人制、无越位。每队与其余四队各赛两场，共 <b>20 场常规赛</b>，积分前两名再打一场决赛。全部比赛安排在每周五 <b>16:45–17:20</b>。</p>
+        <p>同学们对足球的热情日益高涨，但课余时间缺乏有组织、有规模的比赛平台。为此，苏茜足球社发起第一届星海足球超级联赛，希望让更多同学能踢上球、享受足球的快乐。</p>
+        <p>本届赛事面向高一、高二在校学生，要求具备基本足球基础、身体健康；暂定采用七人制赛制，预计组成 6 支队伍。</p>
       </div>
       <div class="goals">
         <div class="goal glass"><span class="goal__num">01</span><span class="goal__text">丰富课余生活，让更多同学享受足球的乐趣</span></div>
@@ -380,13 +380,13 @@
         <img src="cover_field.jpg" alt="" loading="lazy">
         <div class="cap">
           <div class="highlight__icon"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
-          <h3 class="highlight__title">5 支队伍 · 双循环 20 场</h3>
-          <p class="highlight__desc">首届联赛由 47 名社员组成 5 支队伍，每队与其余四队各赛两场，共 20 场常规赛，前两名再打一场决赛。</p>
+          <h3 class="highlight__title">6 支队伍同场竞技</h3>
+          <p class="highlight__desc">首届联赛预计组成 6 支球队，规模适中，既有竞争性也保证参与度。</p>
         </div>
       </div>
-      <div class="highlight glass"><div class="highlight__icon"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 7.5l4.2 2.5v5L12 17.5 7.8 15v-5z"/><path d="M12 2v5.5M12 17.5V22M2.8 9.2l4.9 2.6M16.3 12.2l4.9-2.6M2.8 14.8l4.9-2.6M16.3 11.8l4.9 2.6"/></svg></div><h3 class="highlight__title">七人制快节奏</h3><p class="highlight__desc">单场 10 分钟（单节，第 5 分钟换边），无越位规则，节奏快、参与感强，一节课间就能踢完两档。</p></div>
-      <div class="highlight glass"><div class="highlight__icon"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m15 9-6 6"/><path d="M9.5 9.5h.01"/><path d="M14.5 14.5h.01"/></svg></div><h3 class="highlight__title">球门加权计分</h3><p class="highlight__desc">两片场地球门不一样大。在 3 米宽门里进的球更难，所以<b>2 号场的进球算 1.5 个</b> —— 用系数把两片场地拉平。</p></div>
-      <div class="highlight glass"><div class="highlight__icon"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></div><h3 class="highlight__title">每周五 16:45–17:20</h3><p class="highlight__desc">比赛利用社团 / 阳光体育时间进行，不额外占用课余；每档 10 分钟，两片场地同时开球。</p></div>
+      <div class="highlight glass"><div class="highlight__icon"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 7.5l4.2 2.5v5L12 17.5 7.8 15v-5z"/><path d="M12 2v5.5M12 17.5V22M2.8 9.2l4.9 2.6M16.3 12.2l4.9-2.6M2.8 14.8l4.9-2.6M16.3 11.8l4.9 2.6"/></svg></div><h3 class="highlight__title">七人制快节奏</h3><p class="highlight__desc">上下半场各 15 分钟，无越位规则，节奏快、进球多、参与感强。</p></div>
+      <div class="highlight glass"><div class="highlight__icon"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m15 9-6 6"/><path d="M9.5 9.5h.01"/><path d="M14.5 14.5h.01"/></svg></div><h3 class="highlight__title">报名费全免</h3><p class="highlight__desc">零报名费，物资由自愿捐赠支持，降低参与门槛。</p></div>
+      <div class="highlight glass"><div class="highlight__icon"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></div><h3 class="highlight__title">阳光体育</h3><p class="highlight__desc">比赛期望利用阳光体育时间进行，不额外占用时间。</p></div>
       <div class="highlight glass"><div class="highlight__icon"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div><h3 class="highlight__title">在线数据记录</h3><p class="highlight__desc">积分榜、射手榜、赛程表实时更新，比赛日后即可查看。</p></div>
       <div class="highlight glass"><div class="highlight__icon"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></div><h3 class="highlight__title">公平竞赛公约</h3><p class="highlight__desc">倡导尊重对手、尊重裁判，违规行为按规处理，树立良好赛风。</p></div>
     </div>
@@ -397,39 +397,38 @@
   <div class="wrap">
     <div class="section__header reveal">
       <span class="section__eyebrow">Format</span>
-      <h2 class="section__title">竞赛办法</h2>
-      <p class="section__lead">本届采用双循环 20 场 + 前两名决赛。每队 8 场，与其余四队各碰两次。</p>
+      <h2 class="section__title">赛制方案</h2>
+      <p class="section__lead">本届联赛提供多种赛制方案，最终由全体参赛社员投票决定。</p>
     </div>
     <div class="format__cards reveal">
       <div class="format-card format-card--recommended glass">
-        <h3 class="format-card__name format-card__name--accent">双循环 · 20 场常规赛</h3>
-        <p class="format-card__meta">每队 8 场 · 每场 10 分钟</p>
-        <p class="format-card__desc">5 支队伍两两各赛两场，共 20 场。每队和其余四支队伍各碰两次，赛果比单循环更可信，也让每队都有 8 次出场机会。</p>
-        <span class="format-card__tag">本届赛制</span>
+        <h3 class="format-card__name format-card__name--accent">瑞士轮 + 季后赛</h3>
+        <p class="format-card__meta">约 20 场 · 约 4 周，每队 5-7 场</p>
+        <p class="format-card__desc">第 1 轮随机配对，之后按积分相近队伍互相对阵；5 轮后前 4 名进入季后赛（半决赛、决赛、季军赛）。弱队有更多赢球机会，同时保留决赛仪式感。</p>
+        <span class="format-card__tag">首推方案</span>
       </div>
       <div class="format-card glass">
-        <h3 class="format-card__name">前两名决赛</h3>
-        <p class="format-card__meta">1 场 · 常规赛结束后</p>
-        <p class="format-card__desc">常规赛积分第 1 名与第 2 名进行一场决赛，决出冠军。第 3–5 名的名次由常规赛排名直接确定。决赛平局直接点球决胜。</p>
-        <span class="format-card__tag">冠军决定方式</span>
+        <h3 class="format-card__name">单循环联赛</h3>
+        <p class="format-card__meta">15 场 · 约 3 周，每队 5 场</p>
+        <p class="format-card__desc">6 队每两队各踢一场，胜 3 分、平 1 分、负 0 分，最终按积分排名。规则简单、组织成本低、公平性好。</p>
+        <span class="format-card__tag">轻量备选</span>
       </div>
       <div class="format-card glass">
-        <h3 class="format-card__name">球门加权</h3>
-        <p class="format-card__meta">1 号场 ×1.0 ｜ 2 号场 ×1.5</p>
-        <p class="format-card__desc">两片场地的球门不一样大：1 号场是七人制门（约 5 米宽），2 号场是五人制门（约 3 米宽）。同样一脚射门，在 3 米宽的门里明显更难进。所以<b>在 2 号场进的球算 1.5 个</b>，净胜球、个人进球、助攻都按这个系数折算；<b>积分照常算，一分不加</b>。</p>
-        <span class="format-card__tag">公平性设计</span>
+        <h3 class="format-card__name">小组赛 + 淘汰赛</h3>
+        <p class="format-card__meta">约 10-11 场 · 约 3 周，每队 2-4 场</p>
+        <p class="format-card__desc">分 A、B 两组各 3 队单循环，每组前两名出线，半决赛、决赛、季军赛一场定胜负。淘汰赛平局点球决胜。</p>
+        <span class="format-card__tag">仪式感强</span>
       </div>
     </div>
     <div class="format__table-wrap glass reveal">
       <table class="format__table">
-        <thead><tr><th>项目</th><th>规定</th><th>说明</th></tr></thead>
+        <thead><tr><th>赛制</th><th>场次</th><th>周期</th><th>核心特点</th></tr></thead>
         <tbody>
-          <tr><td><strong>赛制</strong></td><td>双循环 20 场 + 决赛</td><td>5 队，每队 8 场常规赛，共 21 场</td></tr>
-          <tr><td><strong>单场时长</strong></td><td>10 分钟（单节）</td><td>第 5 分钟换边，毛时不停表，不设中场休息</td></tr>
-          <tr><td><strong>每档赛程</strong></td><td>两片场地同时开球</td><td>16:50–17:00 第一档、17:00–17:10 第二档</td></tr>
-          <tr><td><strong>积分</strong></td><td>胜 3 分、平 1 分、负 0 分</td><td>积分<b>不加权</b>；同分先比相互战绩</td></tr>
-          <tr><td><strong>加权</strong></td><td class="on">1 号场 ×1.0，2 号场 ×1.5</td><td>用于净胜球、个人进球、助攻；全赛季不调整</td></tr>
-          <tr><td><strong>榜单</strong></td><td>原始数与加权数<b>双列并列</b></td><td>射手榜、助攻榜、积分榜均同时显示两列</td></tr>
+          <tr><td><strong>单循环联赛</strong></td><td>15 场</td><td>约 3 周</td><td>每队踢 5 场，简单公平，参与度高</td></tr>
+          <tr><td><strong>双循环联赛</strong></td><td>30 场</td><td>5-6 周</td><td>最公平，赛程最丰富，但周期最长</td></tr>
+          <tr><td><strong>小组赛 + 淘汰</strong></td><td>约 10-11 场</td><td>约 3 周</td><td>有决赛仪式感，弱队可能较早出局</td></tr>
+          <tr><td><strong class="on">瑞士轮 + 季后赛</strong></td><td>约 20 场</td><td>约 4 周</td><td>采用近电竞风格，强弱各自对阵，弱队机会多</td></tr>
+          <tr><td><strong>联赛 + 杯赛双轨</strong></td><td>约 21 场</td><td>约 4 周</td><td>双冠军制度，内容最丰富，组织量最大</td></tr>
         </tbody>
       </table>
     </div>
@@ -440,15 +439,14 @@
   <div class="wrap">
     <div class="section__header reveal">
       <span class="section__eyebrow">Schedule</span>
-      <h2 class="section__title">赛程（以比赛周计）</h2>
-      <p class="section__lead">整个赛季共 8 个比赛周，第 6 比赛周为机动周。各比赛周落在哪个校历周，以足球社通知为准。</p>
+      <h2 class="section__title">赛程时间线（暂定）</h2>
+      <p class="section__lead">从招新到决赛颁奖，我们希望整个赛季能够贯穿 2026 秋季学期。</p>
     </div>
     <div class="timeline reveal">
-      <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">9 月 30 日 · 已结束</p><h3 class="timeline__title">现场报名</h3><p class="timeline__desc">报名仅限 9 月 30 日（周三）16:00–17:00 现场登记，地点苏茜路校区足球场。报名现已截止，逾期不再受理。</p></div>
-      <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">报名结束后 · 已完成</p><h3 class="timeline__title">抽签分队</h3><p class="timeline__desc">47 名社员已抽签分为 5 支队伍，每队 9–10 人。结果已向全社公布。</p></div>
-      <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">第 1 比赛周起</p><h3 class="timeline__title">常规赛 · 20 场</h3><p class="timeline__desc">每周五 16:45–17:20，利用社团 / 阳光体育时间进行。社团周两片场地并行（4 场），阳光体育周一片场地（2 场）。积分榜与榜单随比赛实时更新。</p></div>
-      <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">第 6 比赛周</p><h3 class="timeline__title">机动周</h3><p class="timeline__desc">用于雨天、考试或活动冲突造成的顺延补赛；若一切顺利，则安排训练或友谊赛。</p></div>
-      <div class="timeline__item timeline__item--final"><span class="timeline__dot"></span><p class="timeline__date">第 8 比赛周</p><h3 class="timeline__title">决赛日 · 颁奖收官</h3><p class="timeline__desc">常规赛积分前两名进行决赛（1 号场）。赛后举行颁奖仪式、冠军队合影，首届联赛收官。</p></div>
+      <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">9 月 30 日 · 仅此一天</p><h3 class="timeline__title">现场报名</h3><p class="timeline__desc">联赛报名仅限 9 月 30 日（周三）16:00–17:00 现场登记，地点苏茜路校区足球场，逾期不再受理。</p></div>
+      <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">报名结束后</p><h3 class="timeline__title">抽签分组 · 确定赛制</h3><p class="timeline__desc">公布参赛队伍名单，举行抽签仪式确定对阵，全体参赛社员投票确定最终赛制。</p></div>
+      <div class="timeline__item"><span class="timeline__dot"></span><p class="timeline__date">十一月初</p><h3 class="timeline__title">联赛正式开赛</h3><p class="timeline__desc">利用每周社团时间（两块场地并行）进行比赛，建立数据表更新积分榜与射手榜。</p></div>
+      <div class="timeline__item timeline__item--final"><span class="timeline__dot"></span><p class="timeline__date">一月初（暂定）</p><h3 class="timeline__title">决赛日 · 颁奖收官</h3><p class="timeline__desc">决赛日集中进行，邀请同学围观。赛后举行颁奖仪式、冠军队合影，首届联赛圆满收官。</p></div>
     </div>
   </div>
 </section>
@@ -461,27 +459,33 @@
       <p class="section__lead">以荣誉与校园影响力为主的奖励体系，让你成为校园足球明星。</p>
     </div>
     <div class="honors__grid reveal">
-      <div class="honor glass"><div class="honor__icon"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"/><path d="M11 12 5.12 2.2"/><path d="m13 12 5.88-9.8"/><path d="M8 7h8"/><circle cx="12" cy="17" r="5"/><path d="M12 18v-2h-.5"/></svg></div><h3 class="honor__name">冠军 / 亚军</h3><p class="honor__desc">常规赛前两名打决赛，胜者为冠军、负者为亚军，颁发奖状，冠军队合影悬挂社团活动室。</p></div>
-      <div class="honor glass"><div class="honor__icon"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><h3 class="honor__name">金靴奖</h3><p class="honor__desc">授予<b>加权进球</b>最多的球员；射手榜同时显示原始进球与加权进球两列。</p></div>
-      <div class="honor glass"><div class="honor__icon"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v2"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></div><h3 class="honor__name">最佳门将</h3><p class="honor__desc">授予失球最少、表现最佳的守门员；每场比赛均登记双方守门员，赛季末据此评定。</p></div>
+      <div class="honor glass"><div class="honor__icon"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"/><path d="M11 12 5.12 2.2"/><path d="m13 12 5.88-9.8"/><path d="M8 7h8"/><circle cx="12" cy="17" r="5"/><path d="M12 18v-2h-.5"/></svg></div><h3 class="honor__name">冠军 / 亚军 / 季军</h3><p class="honor__desc">联赛最高团队荣誉，颁发奖状，冠军队合影悬挂社团活动室。</p></div>
+      <div class="honor glass"><div class="honor__icon"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><h3 class="honor__name">金靴奖</h3><p class="honor__desc">授予联赛进球最多的球员，射手榜实时见证竞争。</p></div>
+      <div class="honor glass"><div class="honor__icon"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v2"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></div><h3 class="honor__name">金手套奖</h3><p class="honor__desc">授予失球最少、表现最佳的守门员。</p></div>
       <div class="honor glass"><div class="honor__icon"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h3 class="honor__name">MVP</h3><p class="honor__desc">最有价值球员，由全体参赛同学投票产生。</p></div>
     </div>
-    <div class="honor__note reveal">另有<b>公平竞赛奖</b>（体育道德风尚最佳球队，弃权的球队取消资格）。荣誉形式：奖状证书 + 冠军队合影展示 + 校园网专题推送 + 朋友圈 / 班级群战报。</div>
+    <div class="honor__note reveal">荣誉形式：奖状证书 + 冠军队合影展示 + 校园网专题推送 + 朋友圈/班级群战报，打造属于星海校园的足球明星。</div>
   </div>
 </section>
 
 <section class="section" id="join">
   <div class="wrap">
     <div class="section__header reveal">
-      <span class="section__eyebrow">Teams &amp; Entry</span>
-      <h2 class="section__title">参赛情况</h2>
-      <p class="section__lead">报名已于 9 月 30 日（周三）现场截止，逾期不再受理。本届共 47 名社员，抽签编为 5 支队伍。</p>
+      <span class="section__eyebrow">How to Join</span>
+      <h2 class="section__title">如何报名</h2>
+      <p class="section__lead">报名仅限 9 月 30 日（周三）16:00–17:00 当天现场登记，地点苏茜路校区足球场。</p>
     </div>
     <div class="join__wrap reveal">
-      <div class="join__card glass"><h3><span>01</span> 参赛对象</h3><ul class="join__list"><li>高一、高二在校学生</li><li>共 47 名社员</li><li>需具备基本足球基础</li><li>身体健康，无不适宜剧烈运动的疾病</li><li>报名已于 9 月 30 日截止</li></ul></div>
-      <div class="join__card glass"><h3><span>02</span> 队伍构成</h3><ul class="join__list"><li>共 5 支队伍，每队 9–10 人</li><li>上场 7 人（七人制，无越位）</li><li>每队设队长一名</li><li>抽签分队结果已公布</li><li>分队后不得更换队员、不得跨队出赛</li></ul></div>
-      <div class="join__card glass"><h3><span>03</span> 报名说明</h3><ul class="join__list"><li>报名仅限 9 月 30 日（周三）16:00–17:00 现场登记</li><li>已截止，逾期不再受理</li><li>现场筛选后登记，不留补报通道</li><li>联系方式等个人信息仅社团内部留存</li></ul></div>
-      <div class="join__card glass"><h3><span>04</span> 比赛时间</h3><ul class="join__list"><li>每周五 16:45–17:20</li><li>16:50–17:00 第一档 · 17:00–17:01 换场 · 17:01–17:11 第二档</li><li>每场 10 分钟，两片场地同时开球</li><li>共 8 个比赛周，第 6 周为机动周</li></ul></div>
+      <div class="join__card glass"><h3><span>01</span> 参赛对象</h3><ul class="join__list"><li>高一、高二在校学生</li><li>预计参赛人数约 40 人</li><li>需具备基本足球基础</li><li>场地紧张时报名可能进行小筛选</li><li>身体健康，无不适宜剧烈运动的疾病</li></ul></div>
+      <div class="join__card glass"><h3><span>02</span> 组队方式</h3><ul class="join__list"><li>自由组队，跨班级不限</li><li>每队 8 至 10 人（含替补）</li><li>上场 7 人（七人制）</li><li>预计组成 6 支球队</li><li>设队长一名，负责队内联络</li></ul></div>
+      <div class="join__card glass"><h3><span>03</span> 报名方式</h3><ul class="join__list"><li>9 月 30 日（周三）16:00–17:00 现场登记报名</li><li>报名仅限当天现场，逾期不再受理</li><li>名额按报名先后确定，尽早锁定队伍</li><li>报名结束后统一抽签分组</li></ul></div>
+      <div class="join__card glass" style="display:flex;flex-direction:column;justify-content:space-between">
+        <div><h3><span>04</span> 报名时间</h3><ul class="join__list"><li>仅 9 月 30 日（周三）16:00–17:00 当天报名</li><li>十一月初联赛开赛（暂定）</li><li>一月初决赛（暂定）</li></ul></div>
+        <div class="join__cta">
+          <p>零报名费，物资由自愿捐赠支持</p>
+          <a href="xfsl-recruit-2026.jpg" download="星海苏茜足球社-2026招新.jpg" class="btn btn--outline js-share-poster"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg> 分享 / 下载海报</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -494,14 +498,13 @@
       <p class="section__lead">简明清晰的规则，让比赛安全、公平、有序进行。</p>
     </div>
     <div class="rules__grid reveal">
-      <div class="rule glass"><div class="rule__icon"><svg class="icon icon--md" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 7.5l4.2 2.5v5L12 17.5 7.8 15v-5z"/><path d="M12 2v5.5M12 17.5V22M2.8 9.2l4.9 2.6M16.3 12.2l4.9-2.6M2.8 14.8l4.9-2.6M16.3 11.8l4.9 2.6"/></svg></div><div><h3 class="rule__title">七人制，无越位</h3><p class="rule__desc">每队上场 7 人（含 1 名守门员），采用标准七人制规则，<b>不设越位</b>。</p></div></div>
-      <div class="rule glass"><div class="rule__icon"><svg class="icon icon--md" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h3 class="rule__title">比赛时间</h3><p class="rule__desc"><b>单节 10 分钟</b>，第 5 分钟换边、不设中场休息；毛时不停表，补时不超过 1 分钟。</p></div></div>
-      <div class="rule glass"><div class="rule__icon"><svg class="icon icon--md" viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div><h3 class="rule__title">积分与加权</h3><p class="rule__desc">胜 3 分、平 1 分、负 0 分，<b>积分不加权</b>；同分先比相互战绩。净胜球、个人进球、助攻按场地加权：<b>1 号场 ×1.0、2 号场 ×1.5</b>。</p></div></div>
-      <div class="rule glass"><div class="rule__icon"><svg class="icon icon--md" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div><div><h3 class="rule__title">红黄牌</h3><p class="rule__desc">黄牌警告，同场累计 2 黄即为红牌；红牌罚下不得替换，并<b>自动停赛下一场</b>；跨场累计 3 黄停赛 1 场。</p></div></div>
-      <div class="rule glass"><div class="rule__icon"><svg class="icon icon--md" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div><div><h3 class="rule__title">换人规则</h3><p class="rule__desc">换人不限次数，须在<b>死球时</b>先下后上；换下的队员可以再次上场。</p></div></div>
-      <div class="rule glass"><div class="rule__icon"><svg class="icon icon--md" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/></svg></div><div><h3 class="rule__title">平局处理</h3><p class="rule__desc">常规赛平局即为平局；<b>决赛</b>平局直接点球决胜（先各罚 3 轮，之后突然死亡）。</p></div></div>
-      <div class="rule glass"><div class="rule__icon"><svg class="icon icon--md" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div><div><h3 class="rule__title">界外球与回传</h3><p class="rule__desc">界外球<b>用脚踢</b>，直接踢入球门不算得分；守门员<b>不得用手接</b>本方故意用脚回传的球。</p></div></div>
-      <div class="rule glass"><div class="rule__icon"><svg class="icon icon--md" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg></div><div><h3 class="rule__title">装备与纪律</h3><p class="rule__desc">使用 <b>4 号球</b>；球鞋限碎钉或平底，禁止金属长钉；禁止佩戴首饰。每档准时开球，<b>迟到 3 分钟判弃权</b>（0:3 负）。</p></div></div>
+      <div class="rule glass"><div class="rule__icon"><svg class="icon icon--md" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 7.5l4.2 2.5v5L12 17.5 7.8 15v-5z"/><path d="M12 2v5.5M12 17.5V22M2.8 9.2l4.9 2.6M16.3 12.2l4.9-2.6M2.8 14.8l4.9-2.6M16.3 11.8l4.9 2.6"/></svg></div><div><h3 class="rule__title">七人制，无越位</h3><p class="rule__desc">每队上场 7 人，采用标准七人制规则，无越位限制。</p></div></div>
+      <div class="rule glass"><div class="rule__icon"><svg class="icon icon--md" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h3 class="rule__title">比赛时间</h3><p class="rule__desc">上下半场各 15 分钟，单场约 30 分钟。</p></div></div>
+      <div class="rule glass"><div class="rule__icon"><svg class="icon icon--md" viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div><h3 class="rule__title">积分规则</h3><p class="rule__desc">胜 3 分、平 1 分、负 0 分；积分相同先看净胜球。</p></div></div>
+      <div class="rule glass"><div class="rule__icon"><svg class="icon icon--md" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div><div><h3 class="rule__title">红黄牌</h3><p class="rule__desc">黄牌警告，红牌罚下并自动停赛一场，请尊重规则与对手。</p></div></div>
+      <div class="rule glass"><div class="rule__icon"><svg class="icon icon--md" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div><div><h3 class="rule__title">换人规则</h3><p class="rule__desc">换人不限次数，须在指定换人区进行，先下后上。</p></div></div>
+      <div class="rule glass"><div class="rule__icon"><svg class="icon icon--md" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/></svg></div><div><h3 class="rule__title">平局处理</h3><p class="rule__desc">小组赛平局即平局；淘汰赛平局直接点球决胜。</p></div></div>
+      <div class="rule glass"><div class="rule__icon"><svg class="icon icon--md" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg></div><div><h3 class="rule__title">装备要求</h3><p class="rule__desc">建议佩戴护腿板，禁止佩戴首饰。</p></div></div>
     </div>
   </div>
 </section>
@@ -525,10 +528,10 @@
         <h4 class="footer__title">快速链接</h4>
         <ul class="footer__list">
           <li><a href="#about">联赛简介</a></li>
-          <li><a href="#format">竞赛办法</a></li>
-          <li><a href="#schedule">赛程</a></li>
-          <li><a href="#join">参赛情况</a></li>
-          <li><a href="#rules">比赛规则</a></li>
+          <li><a href="#format">赛制方案</a></li>
+          <li><a href="#schedule">赛程时间线</a></li>
+          <li><a href="#join">如何报名</a></li>
+          <li><a href="xfsl-recruit-2026.jpg" download="星海苏茜足球社-2026招新.jpg" class="js-share-poster">分享 / 下载海报</a></li>
         </ul>
       </div>
     </div>
@@ -561,6 +564,19 @@ const tlItems=document.querySelectorAll('.timeline__item');
 const tlObs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');tlObs.unobserve(e.target);}});},{threshold:.3});
 tlItems.forEach(i=>tlObs.observe(i));
 
+
+const sharePoster=async(e)=>{
+  e.preventDefault();
+  const url='xfsl-recruit-2026.jpg',fileName='星海苏茜足球社-2026招新.jpg',title='第一届星海足球超级联赛',text='报名仅限 9 月 30 日当天现场 · 星海苏茜足球社';
+  try{
+    if(navigator.canShare&&navigator.share){
+      const resp=await fetch(url);const blob=await resp.blob();const file=new File([blob],fileName,{type:blob.type||'image/png'});
+      if(navigator.canShare({files:[file]})){await navigator.share({files:[file],title,text});return;}
+    }
+  }catch(err){if(err&&err.name==='AbortError')return;}
+  const a=document.createElement('a');a.href=url;a.download=fileName;document.body.appendChild(a);a.click();a.remove();
+};
+document.querySelectorAll('.js-share-poster').forEach(el=>el.addEventListener('click',sharePoster));
 
 /* 鼠标跟随光圈：rAF + lerp 平滑滞后，只更新 transform；触屏/减动效下不启用 */
 (function(){

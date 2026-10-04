@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星海足球超级联赛 · 主页 Demo（DeepSeek 风格）</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-soft:#fafbfd; --surface:#f5f7fb; --surface-hover:#eef1f8;
+    --navy:#0a0a23; --navy-strong:#050518;
+    --text:#1a1a1a; --text-strong:#0a0a0a; --muted:#6b7280;
+    --brand:#4d6bfe; --brand-hover:#3a55e5; --brand-deep:#2a3eb1;
+    --brand-soft:#eaeefe; --hairline:#e5e7eb;
+    --on-dark:#e6e8ef; --on-dark-muted:#a8b0c4;
+    --ease-out:cubic-bezier(0.22,1,0.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    -webkit-font-smoothing:antialiased;line-height:1.6;font-optical-sizing:auto;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+
+  /* 常驻公告条（DeepSeek 顶部蓝条） */
+  .announce{background:var(--brand-soft);color:var(--brand-deep);text-align:center;font-size:.86rem;font-weight:600;padding:10px 18px}
+  .announce b{font-weight:800}
+
+  /* 导航：白底 + 发丝线，无阴影 */
+  .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--hairline)}
+  .nav__inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .nav__logo{font-weight:800;font-size:1.02rem;color:var(--text-strong);display:flex;align-items:center;gap:10px;text-decoration:none;letter-spacing:-.01em}
+  .nav__logo .mark{width:26px;height:26px;border-radius:7px;background:var(--brand);display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;color:#fff}
+  .nav__links{display:flex;gap:6px;list-style:none}
+  .nav__links a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:600;padding:8px 14px;border-radius:8px;transition:color .18s,background .18s,transform .15s var(--ease-out)}
+  .nav__links a:hover{color:var(--text-strong);background:var(--surface)}
+  .nav__links a:active{transform:scale(.96)}
+  .nav__cta{font-size:.86rem;font-weight:700;color:#fff;background:var(--brand);border-radius:8px;padding:9px 18px;text-decoration:none;transition:background .18s,transform .15s var(--ease-out)}
+  .nav__cta:hover{background:var(--brand-hover)}
+  .nav__cta:active{transform:scale(.96)}
+
+  /* Hero：纯白 + 大字 */
+  .hero{padding:88px 0 72px;text-align:center}
+  .hero h1{
+    font-size:clamp(2.6rem,5.6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1.06;
+    margin:0 auto;max-width:12em;color:var(--text-strong);
+  }
+  .hero__en{margin-top:18px;font-size:.82rem;font-weight:700;letter-spacing:.28em;text-indent:.28em;text-transform:uppercase;color:var(--brand)}
+  .hero__sub{margin:22px auto 0;max-width:33em;font-size:1.06rem;color:var(--muted);line-height:1.75}
+  .hero__cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+  .btn{border:none;cursor:pointer;font:inherit;font-size:.98rem;font-weight:700;padding:14px 30px;border-radius:8px;text-decoration:none;display:inline-block;transition:background .18s,color .18s,border-color .18s,transform .15s var(--ease-out)}
+  .btn:active{transform:scale(.96)}
+  .btn--primary{color:#fff;background:var(--brand)}
+  .btn--primary:hover{background:var(--brand-hover)}
+  .btn--ghost{color:var(--text-strong);background:#fff;border:1px solid var(--hairline)}
+  .btn--ghost:hover{border-color:var(--brand);color:var(--brand)}
+
+  /* Hero 实景图（真实照片，发丝线框，无阴影） */
+  .hero__shot{margin:54px auto 0;max-width:900px;border:1px solid var(--hairline);border-radius:16px;overflow:hidden;background:var(--surface)}
+  .hero__shot img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover}
+  .hero__shot figcaption{text-align:left;padding:14px 18px;font-size:.82rem;color:var(--muted);border-top:1px solid var(--hairline)}
+
+  /* 重量级区块：深海军蓝 + 网格线底纹（DeepSeek 的 weight register） */
+  .band{background:var(--navy);position:relative;overflow:hidden}
+  .band::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+    background-size:44px 44px}
+  .band .wrap{position:relative;padding:56px 22px}
+  .stats{display:flex;justify-content:center}
+  .stat{flex:1;text-align:center;padding:6px 12px}
+  .stat + .stat{border-left:1px solid rgba(255,255,255,.12)}
+  .stat b{display:block;font-size:2.3rem;font-weight:800;letter-spacing:-.02em;color:#fff;line-height:1.1}
+  .stat span{font-size:.82rem;color:var(--on-dark-muted);font-weight:600}
+
+  /* 区块 */
+  section{padding:72px 0}
+  .sec{padding-top:8px}
+  .sec__label{font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--brand)}
+  .sec h2{font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;color:var(--text-strong);margin-top:14px}
+  .sec__lead{color:var(--muted);margin-top:12px;font-size:.98rem;max-width:52ch}
+
+  /* 亮点：bento，灰蓝面 + 发丝线 + 零阴影 */
+  .bento{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px;margin-top:36px}
+  .bcell{background:var(--surface);border:1px solid var(--hairline);border-radius:16px;padding:26px 24px;transition:transform .25s var(--ease-out),border-color .2s,background .2s}
+  .bcell:hover{transform:translateY(-3px);border-color:var(--brand);background:var(--surface-hover)}
+  .bcell:active{transform:translateY(-1px) scale(.985)}
+  .bcell .no{font-size:.78rem;font-weight:700;letter-spacing:.06em;color:var(--brand);margin-bottom:14px;font-family:ui-monospace,SF Mono,Menlo,monospace}
+  .bcell h4{font-size:1.04rem;font-weight:750;letter-spacing:-.01em;margin-bottom:8px;color:var(--text-strong)}
+  .bcell p{font-size:.88rem;color:var(--muted);line-height:1.7}
+  .bcell--big{grid-row:span 2;padding:0;overflow:hidden;display:flex;flex-direction:column}
+  .bcell--big img{width:100%;flex:1;object-fit:cover;min-height:220px}
+  .bcell--big .cap{padding:22px 24px}
+  .bcell--big h4{font-size:1.3rem}
+
+  /* 赛制：一主 + 两辅 */
+  .plans{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
+  .plan{background:#fff;border:1px solid var(--hairline);border-radius:16px;padding:30px 28px;transition:transform .25s var(--ease-out),border-color .2s}
+  .plan:hover{transform:translateY(-3px);border-color:var(--brand)}
+  .plan:active{transform:translateY(-1px) scale(.985)}
+  .plan--main{grid-column:1/-1;display:flex;align-items:center;gap:32px;padding:36px 38px;background:var(--surface)}
+  .plan--main .big{font-size:3.4rem;font-weight:800;letter-spacing:-.04em;color:var(--brand);line-height:1;font-family:ui-monospace,SF Mono,Menlo,monospace}
+  .plan .tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.05em;padding:5px 12px;border-radius:6px;margin-bottom:14px;color:var(--brand-deep);background:var(--brand-soft)}
+  .plan h4{font-size:1.12rem;font-weight:750;letter-spacing:-.01em;color:var(--text-strong)}
+  .plan .num{margin:7px 0 12px;font-size:.84rem;color:var(--muted)}
+  .plan p{font-size:.88rem;color:var(--muted);line-height:1.7}
+
+  /* 时间线 */
+  .tl{max-width:640px;margin:36px auto 0;position:relative;padding-left:30px}
+  .tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:var(--brand-soft)}
+  .tl__item{position:relative;margin-bottom:30px}
+  .tl__dot{position:absolute;left:-28px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--brand)}
+  .tl__item h5{font-size:1.02rem;font-weight:750;letter-spacing:-.01em;color:var(--text-strong)}
+  .tl__item .d{font-size:.78rem;font-weight:700;color:var(--brand);margin:3px 0 7px}
+  .tl__item p{font-size:.9rem;color:var(--muted);line-height:1.7}
+
+  /* 报名：深海军蓝带 + 白 QR 卡 */
+  .join{background:var(--navy);position:relative;overflow:hidden}
+  .join::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+    background-size:44px 44px}
+  .join .wrap{position:relative;display:flex;align-items:center;gap:44px;padding:64px 22px}
+  .join .txt{flex:1}
+  .join h3{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;letter-spacing:-.02em;color:#fff;line-height:1.2}
+  .join p{color:var(--on-dark-muted);font-size:.96rem;line-height:1.75;max-width:34em;margin-top:12px}
+  .join .btn{margin-top:26px}
+  .join .btn--primary{color:#fff;background:var(--brand)}
+  .qr{width:182px;flex-shrink:0;background:#fff;border-radius:16px;padding:18px;text-align:center}
+  .qr img{width:134px;height:134px;border-radius:8px;display:block;margin:0 auto}
+  .qr span{display:block;margin-top:11px;font-size:.8rem;font-weight:700;color:var(--text-strong)}
+  .qr small{display:block;margin-top:3px;font-size:.7rem;color:var(--muted)}
+
+  footer{border-top:1px solid var(--hairline);padding:40px 0 64px;text-align:center;color:var(--muted);font-size:.84rem;line-height:1.9}
+  footer .brand{color:var(--text-strong);font-weight:800}
+
+  /* 入场 */
+  .rv{opacity:0;transform:translateY(20px);transition:opacity .55s var(--ease-out),transform .55s var(--ease-out)}
+  .rv.go{opacity:1;transform:none}
+
+  @media (hover:hover) and (pointer:fine){ .bcell:hover,.plan:hover{transform:translateY(-3px)} }
+  @media (max-width:880px){
+    .nav__links{display:none}
+    .bento{grid-template-columns:1fr 1fr}
+    .bcell--big{grid-row:auto}
+    .plans{grid-template-columns:1fr}
+    .plan--main{flex-direction:column;text-align:center;gap:16px;padding:28px 24px}
+    .join .wrap{flex-direction:column;text-align:center;padding:48px 22px}
+    .join p{margin:12px auto 0}
+    .stats{flex-wrap:wrap}
+    .stat{flex:1 1 40%}
+    .stat + .stat{border-left:none}
+    .hero{padding:64px 0 56px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .rv{opacity:1;transform:none;transition:none}
+    .bcell,.plan,.btn,.nav__links a,.nav__cta{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="announce">⚽ 第一届星海足球超级联赛 <b>报名开启</b>，阳光体育时段，零报名费</div>
+
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__logo" href="#"><span class="mark">⚽</span>星海足球超级联赛</a>
+    <ul class="nav__links">
+      <li><a href="#highlights">亮点</a></li>
+      <li><a href="#format">赛制</a></li>
+      <li><a href="#timeline">赛程</a></li>
+      <li><a href="#join">报名</a></li>
+    </ul>
+    <a class="nav__cta" href="#join">立即报名</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1 class="rv go">第一届<br>星海足球超级联赛</h1>
+    <p class="hero__en rv go">Xinghai Football Super League</p>
+    <p class="hero__sub rv go">新操场建成，足球社全新起点。七人制快节奏、零报名费，让热爱开踢。</p>
+    <div class="hero__cta rv go">
+      <a href="#join" class="btn btn--primary">立即报名</a>
+      <a href="#format" class="btn btn--ghost">了解赛制</a>
+    </div>
+    <figure class="hero__shot rv go">
+      <img src="hero-field.png" alt="暮色下的新操场足球场，灯光亮起" loading="eager">
+      <figcaption>新操场 · 第一个比赛日的黄昏</figcaption>
+    </figure>
+  </div>
+</header>
+
+<div class="band">
+  <div class="wrap">
+    <div class="stats rv go">
+      <div class="stat"><b>6</b><span>支队伍</span></div>
+      <div class="stat"><b>7</b><span>人制</span></div>
+      <div class="stat"><b>0</b><span>报名费</span></div>
+      <div class="stat"><b>30</b><span>分钟每场</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="highlights" class="sec">
+  <div class="wrap">
+    <span class="sec__label rv">Highlights</span>
+    <h2 class="rv">联赛亮点</h2>
+    <p class="sec__lead rv">第一届赛事为你准备的新体验，从赛制到数据都算好。</p>
+    <div class="bento">
+      <div class="bcell bcell--big rv">
+        <img src="hero-field.png" alt="" loading="lazy">
+        <div class="cap"><span class="no">01</span><h4>6 支队伍同场竞技</h4><p>首届 6 支球队，规模适中，竞争与参与兼得。</p></div>
+      </div>
+      <div class="bcell rv"><span class="no">02</span><h4>七人制快节奏</h4><p>上下半场各 15 分钟，无越位，进球多参与感强。</p></div>
+      <div class="bcell rv"><span class="no">03</span><h4>报名费全免</h4><p>零报名费，物资自愿捐赠支持，降低参与门槛。</p></div>
+      <div class="bcell rv"><span class="no">04</span><h4>阳光体育</h4><p>比赛利用阳光体育时段进行，不额外占用时间。</p></div>
+      <div class="bcell rv"><span class="no">05</span><h4>在线数据记录</h4><p>积分榜、射手榜、赛程表实时更新。</p></div>
+      <div class="bcell rv"><span class="no">06</span><h4>公平竞赛公约</h4><p>尊重对手与裁判，违规按规处理，树立赛风。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="format" class="sec" style="background:var(--bg-soft);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)">
+  <div class="wrap">
+    <h2 class="rv">赛制方案</h2>
+    <p class="sec__lead rv">多套方案，由参赛社员投票决定。</p>
+    <div class="plans">
+      <div class="plan plan--main rv">
+        <span class="big">1</span>
+        <div>
+          <span class="tag">首推</span>
+          <h4>瑞士轮 + 季后赛</h4>
+          <p class="num">约 20 场 · 约 4 周，每队 5-7 场</p>
+          <p>强强对碰、弱队互啄，5 轮后前 4 名进季后赛，保留决赛仪式感。</p>
+        </div>
+      </div>
+      <div class="plan rv"><span class="tag">轻量备选</span><h4>单循环联赛</h4><p class="num">15 场 · 约 3 周，每队 5 场</p><p>6 队各踢一场，积分排名。规则简单、组织成本低、公平性好。</p></div>
+      <div class="plan rv"><span class="tag">仪式感强</span><h4>小组赛 + 淘汰赛</h4><p class="num">约 10-11 场 · 约 3 周，每队 2-4 场</p><p>两组单循环出线，半决赛、决赛、季军赛一场定胜负，平局点球决胜。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline" class="sec">
+  <div class="wrap">
+    <h2 class="rv">赛程时间线</h2>
+    <p class="sec__lead rv">从招新到决赛颁奖，贯穿 2026 秋季学期。</p>
+    <div class="tl rv">
+      <div class="tl__item"><span class="tl__dot"></span><h5>社团组建 · 报名开启</h5><span class="d">九月下旬</span><p>足球社招新完成后同步开启报名通道，扫码或联系社长提交队伍信息。</p></div>
+      <div class="tl__item"><span class="tl__dot"></span><h5>报名截止 · 抽签分组</h5><span class="d">十月上旬</span><p>公布参赛队伍名单，抽签确定对阵，全体参赛社员投票确定最终赛制。</p></div>
+      <div class="tl__item"><span class="tl__dot"></span><h5>联赛正式开赛</h5><span class="d">十月中旬</span><p>利用每周三次阳光体育时间进行，实时更新积分榜与射手榜。</p></div>
+      <div class="tl__item"><span class="tl__dot"></span><h5>决赛日 · 颁奖收官</h5><span class="d">十一月中下旬（暂定）</span><p>决赛日集中进行，邀请同学围观，赛后颁奖、冠军队合影。</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="join">
+  <div class="wrap">
+    <div class="txt rv">
+      <h3>扫码报名，开踢。</h3>
+      <p>在线填写队伍与队员信息，提交后扫码加入联赛交流群；或直接联系足球社社长报名。报名截止后统一抽签分组。</p>
+      <a href="#join" class="btn btn--primary">立即报名</a>
+    </div>
+    <div class="qr rv">
+      <img src="website_qr.png" alt="官网二维码">
+      <span>扫码访问官网</span>
+      <small>xfsl-league.pages.dev</small>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><span class="brand">星海足球超级联赛</span> · 星海实验高级中学（苏茜路校区）</p>
+    <p>© 2026 星海苏茜足球社 · Xinghai Football Super League (XFSL)</p>
+  </div>
+</footer>
+
+<script>
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var rvs=document.querySelectorAll('.rv');
+  if(reduce||!('IntersectionObserver'in window)){
+    rvs.forEach(function(el){el.classList.add('go');});
+  }else{
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('go');io.unobserve(en.target);}});
+    },{threshold:.12});
+    rvs.forEach(function(el){io.observe(el);});
+  }
+</script>
+</body>
+</html>
